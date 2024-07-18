@@ -1,0 +1,113 @@
+
+header{
+    background-color: #fff;
+    text-align: center;
+}
+main{
+    font-size: 20px;
+    text-align: center;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+#start_btn {
+    display: inline-block;
+    background-color: #80af81;
+    color:#ffffff;
+    font-weight: bold;
+    border-radius: 30px;
+    margin: 10px auto;
+    width: 200px;
+    padding: 10px;
+}
+
+#start_btn:hover{
+    background-color: #ffffff;
+    color: #80af81;
+    border-color: #80af81;
+    border: solid ;
+}
+
+#reset_btn {
+    display: inline-block;
+    background-color: #80af81;
+    color:#ffffff;
+    font-weight: bold;
+    border-radius: 30px;
+    margin: 10px auto;
+    width: 200px;
+    padding: 10px;
+}
+
+#reset_btn:hover{
+    background-color: #ffffff;
+    color: #80af81;
+    border-color: #80af81;
+    border: solid ;
+}
+
+
+#judgment{
+    font-size: 30px;
+}
+
+#result{
+    font-size: 30px;
+
+}
+
+#finalresult{
+    background-color: #fff;
+}
+
+.rule {
+    padding-bottom: 20px;
+}
+
+#timer{
+   font-size: 30px; 
+}
+.computer_hand{
+    text-align: center;
+}
+
+#hand {
+    width:180px ;
+    height: 180px;
+    padding: 10px;
+}
+
+ul{
+    padding: 0;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+
+li img{
+    width: 150px;
+}
+
+li:hover{
+    background: #80af81;
+    color:#fff;
+  
+}
+
+#judgment{
+    color: red;
+    font-weight: bold;
+}

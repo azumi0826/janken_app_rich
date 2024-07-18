@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>脳トレじゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>脳トレじゃんけん</h1>
+</header>
+
+<main>
+ <!-- ルール説明 -->
+ <p>10秒間負け続けてください</p>
+ <!-- ルール説明  -->
+
+<div class="start">
+    <p id="start_btn">START</p>
+ </div>
+
+<div class="reset">
+    <p id="reset_btn">RESET</p>
+ </div>
+
+ <p id="timer">残り時間: <span id="countdown">10</span>秒</p>
+
+
+ <!-- computer側の手の出現場所 -->
+ <div class="computer_hand">
+  <img id=hand src=".//img/hatena.png" alt="">
+ </div>
+ <!--  -->
+   
+ <!--  -->
+  <ul>
+    <li id="gu_btn"><img src=".//img/gu.png" alt="gu"></li>
+    <li id="choki_btn"><img src=".//img/choki.png" alt=""></li>
+    <li id="par_btn"><img src=".//img/pa.png" alt=""></li>
+  </ul>
+
+  <div id="judgment"></div>
+
+  <p id="result">
+   負けた回数：<span id="losecount">0</span> <!-- 負けた回数＝成功数 -->
+  </p>
+
+
+</main>
+
+<footer></footer>
+<script>
+let r = "" ; 
+let n = "" ;    
+let losecount = 0; 
+let countdown = 10;
+let timerID; //タイマー識別子
+
+// リセットのための関数を定義
+function resetGame() {
+    clearInterval(timerID); //実行中のタイマーを停止
+    timerID = null; //値無しにする
+    losecount = 0;
+    countdown = 10;
+    $("#losecount").text(losecount);//上で指定した通り、０に
+    $("#countdown").text(countdown);//上で指定した通り、１０秒に戻す
+    $("#judgment").html(" ");
+
+    $("#hand").attr("src", ".//img/hatena.png");
+}
+
+// リセットボタンを押すとリセットされる
+$("#reset_btn").on("click", resetGame);
+
+$("#start_btn").on("click",function() {
+
+    losecount = 0;
+    $("#losecount").text(losecount);
+    countdown = 10;
+    $("#countdown").text(countdown);
+
+    r = Math.random()*3; 
+    n = Math.ceil(r);    
+
+    console.log(n);
+    
+    if(n==1) 
+    {$("#hand").attr("src", ".//img/gu.png"); 
+    }
+    if(n==2) 
+    {$("#hand").attr("src", ".//img/choki.png"); 
+    }
+    if(n==3) 
+    {$("#hand").attr("src", ".//img/pa.png"); 
+    }
+    
+    //カウントダウンのセット
+    timerID = setInterval(function() {
+        countdown = countdown - 1; //1ずつ値がへっていく
+        $("#countdown").text(countdown);
+        
+        if (countdown == 0) { //カウントダウンの数字が０になったら
+            clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+            $("#judgment").css("color","red");
+
+        }
+    }, 1000); //setIntervalは指定された関数を１秒ごとに更新
+})
+
+
+           
+
+// ユーザーがグーボタンを押す
+$("#gu_btn").on("click",function() {
+    if (!timerID) return; // ゲームが開始されていなければ何もしない
+
+    console.log(n);
+    if(n == 1) //computerがグー
+    {
+        clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+    }
+    if(n == 2) //computerがチョキ
+    {
+        clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+    }
+    if(n == 3) //computerがパー
+    {
+        losecount++;
+        $("#losecount").text(losecount);
+    }
+    
+    // timerIDが存在している時のみ、新しくランダム数を生成し、画像を変更
+    if (timerID) {
+        r = Math.random()*3; 
+        n = Math.ceil(r);    
+        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
+        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
+        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+    }
+})
+    
+$("#choki_btn").on("click",function() {
+    if (!timerID) return; // ゲームが開始されていなければ何もしない
+
+    console.log(n);
+    if(n == 1) //computerがグー
+    {
+        losecount++;
+        $("#losecount").text(losecount);
+    }
+    if(n == 2) //computerがチョキ
+    {
+        clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+    }
+    if(n == 3) //computerがパー
+    {
+        clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+    }
+    
+    if (timerID) {
+        r = Math.random()*3; 
+        n = Math.ceil(r);    
+        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
+        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
+        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+    }
+})
+
+$("#par_btn").on("click",function() {
+    if (!timerID) return; // ゲームが開始されていなければ何もしない
+
+    console.log(n);
+    if(n == 1) //computerがグー
+    {
+        clearInterval(timerID);
+            timerID = null;
+            $("#judgment").html("ゲーム終了");
+    }
+    if(n == 2) //computerがチョキ
+    {
+        losecount++;
+        $("#losecount").text(losecount);
+    }
+    if(n == 3) //computerがパー
+    {
+        clearInterval(timerID);
+            timerID = null; //値無しにする
+            $("#judgment").html("ゲーム終了");
+    }
+    
+    if (timerID) {
+        r = Math.random()*3; 
+        n = Math.ceil(r);    
+        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
+        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
+        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+    }
+})
+
+</script>
+</body>
+</html>

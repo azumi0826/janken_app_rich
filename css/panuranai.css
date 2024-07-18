@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+main{
+    border-bottom:1px solid #ccc;
+}
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+#pull{
+    display: inline;
+    width: 300px;
+}
+.class_btn{
+    display: flex;
+}
+
+.class_btn img{
+    
+}
+
+.start_btn{
+    margin:50px auto;
+}
+
+
+
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+
