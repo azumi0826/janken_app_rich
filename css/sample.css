@@ -1,20 +1,30 @@
 
 body{
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
-    width: 80%;
+    width: 100%;
+    max-width: 800px;
     margin-left:auto ;
     margin-right: auto;
+    background-color: #f0f0f0;
+    padding: 20px;
     
 }
 
 header{
-    background-color: #fff;
+    color: #ff6b6b;
     text-align: center;
+    text-shadow:2px 2px #4ecdc4; ;
+    font-size: 30px;
 }
 main{
     font-size: 20px;
     text-align: center;
+    padding: 20px;
+    background-color: #fff;
+
 }
+
+
 footer{
     background-color: #fff;
     border-bottom:1px solid #ccc;
@@ -24,40 +34,25 @@ p{
     text-align: center;
 }
 
-#start_btn {
+/* コンマで同じCSSのものは同時に適用 */
+#start_btn,#reset_btn {
     display: inline-block;
-    background-color: #80af81;
+    background-color: #4ecdc4;
+    box-shadow:0 4px 0 #46b8b0;
+    /* ボタンの影 */
     color:#ffffff;
     font-weight: bold;
-    border-radius: 30px;
-    margin: 10px auto;
-    width: 200px;
+    border-radius: 10px;
+    margin: 5px 15px ;
+    width: 150px;
     padding: 10px;
+    cursor: pointer;
 }
 
-#start_btn:hover{
-    background-color: #ffffff;
-    color: #80af81;
-    border-color: #80af81;
-    border: solid ;
-}
-
-#reset_btn {
-    display: inline-block;
-    background-color: #80af81;
-    color:#ffffff;
-    font-weight: bold;
-    border-radius: 30px;
-    margin: 10px auto;
-    width: 200px;
-    padding: 10px;
-}
-
-#reset_btn:hover{
-    background-color: #ffffff;
-    color: #80af81;
-    border-color: #80af81;
-    border: solid ;
+#start_btn:hover,#reset_btn:hover{
+    background-color: #4ecdc4;
+    transform: scale(1.05);
+    /*拡張 */
 }
 
 
@@ -82,36 +77,55 @@ p{
    font-size: 30px; 
 }
 .computer_hand{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffff;
+    border:5px solid #46b8b0;
+    border-radius: 50%;
+    /* 丸にする */
+    width: 230px;
+    height: 230px;
+    margin: 20px auto;
+
+
 }
 
 #hand {
-    width:180px ;
-    height: 180px;
+    width:150px ;
+    height: 150px;
     padding: 10px;
+    transition: all 0.5s ease;
 }
 
 ul{
     padding: 0;
-    display:table;  /* 定義 */
-    table-layout: fixed;
-    width:100%;
+    display:flex;
+    /* 子要素を横並びにしたいから */
+    justify-content: space-around;
+    /* 両端の余白＝子要素間の余白の半分 */
+    margin-top: 30px;;
 }
 li{
     text-align: center;
     list-style-type:none;
-    background-color: #FFF;
-    display:table-cell;  /* 定義 */
+    background-color: #ff8787;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
     cursor: pointer;
+    transition: all 0.3s ease;
+
 }
 
 li img{
-    width: 150px;
+    width: 120px;
+    height: 120px;
 }
 
 li:hover{
-    background: #80af81;
-    color:#fff;
+    transform: translateY(-5px);
+    background-color: #ff6b6b;
   
 }
 
