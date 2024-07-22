@@ -9,7 +9,7 @@ PCの出した手に対して、後出しで負け続ける脳トレ
 
 ## ③DEMO
 
-デプロイしている場合はURLを記入（任意）
+https://yellow31.sakura.ne.jp/janken_app_rich/janken_rich
 
 
 
