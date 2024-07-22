@@ -86,12 +86,15 @@ function endGame(){
     clearInterval(timerID);
             timerID = null;
             $("#final-score").text(losecount);
-            $("#popup").show();
-
+            $("#popup").fadeIn(500);
+            // フェードインで出現 0.5秒で
 }
 
 // リセットボタンを押すとリセットされる
 $("#reset_btn").on("click", resetGame);
+
+
+
 
 $("#start_btn").on("click",function() {
 
