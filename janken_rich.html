@@ -91,8 +91,21 @@ function endGame(){
 // リセットボタンを押すとリセットされる
 $("#reset_btn").on("click", resetGame);
 
-
-
+// コンピューターの手が更新される関数
+// 小さく半透明→３００ミリ秒→新しい画像が通常サイズ不透明に
+function updateComputerHand() {
+    $("#hand").removeClass("hand-visible").addClass("hand-hidden");
+    
+    setTimeout(function() {
+        r = Math.random() * 3;
+        n = Math.ceil(r);
+        if (n == 1) { $("#hand").attr("src", ".//img/gu.png"); }
+        if (n == 2) { $("#hand").attr("src", ".//img/choki.png"); }
+        if (n == 3) { $("#hand").attr("src", ".//img/pa.png"); }
+        
+        $("#hand").removeClass("hand-hidden").addClass("hand-visible");
+    }, 300);
+}
 
 $("#start_btn").on("click",function() {
 
@@ -152,11 +165,7 @@ $("#gu_btn").on("click",function() {
     
     // timerIDが存在している時のみ、新しくランダム数を生成し、画像を変更
     if (timerID) {
-        r = Math.random()*3; 
-        n = Math.ceil(r);    
-        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
-        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
-        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+        updateComputerHand();
     }
 })
 
@@ -180,11 +189,7 @@ $("#choki_btn").on("click",function() {
     }
     
     if (timerID) {
-        r = Math.random()*3; 
-        n = Math.ceil(r);    
-        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
-        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
-        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+        updateComputerHand();
     }
 })
 
@@ -207,11 +212,7 @@ $("#par_btn").on("click",function() {
     }
     
     if (timerID) {
-        r = Math.random()*3; 
-        n = Math.ceil(r);    
-        if(n==1) {$("#hand").attr("src", ".//img/gu.png");}
-        if(n==2) {$("#hand").attr("src", ".//img/choki.png");}
-        if(n==3) {$("#hand").attr("src", ".//img/pa.png");}
+        updateComputerHand()
     }
 })
 

@@ -80,7 +80,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fffff;
+    background-color: #ffffff;
     border:5px solid #46b8b0;
     border-radius: 50%;
     /* 丸にする */
@@ -88,8 +88,11 @@ p{
     height: 230px;
     margin: 20px auto;
 
-
 }
+
+.computer_hand img {
+    transition: all 0.3s ease-in-out;
+  }
 
 #hand {
     width:150px ;
@@ -97,6 +100,16 @@ p{
     padding: 10px;
     transition: all 0.5s ease;
 }
+
+.hand-hidden {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  
+  .hand-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
 
 ul{
     padding: 0;
