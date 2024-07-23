@@ -32,5 +32,5 @@ https://yellow31.sakura.ne.jp/janken_app_rich/janken_rich
 - [感想]
  --機能も大切だが、UIがチープであると、ゲームとして使いたくならないのでデザインの重要性を感じた
 - [参考記事]
-  - 1. [URLをここに記入]
-  - 2. [URLをここに記入]
+  - 1.transition [https://www.asobou.co.jp/blog/web/css-animation3]
+  - 2.ボタン [https://jajaaan.co.jp/css/button/]
